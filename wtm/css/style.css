@@ -3,6 +3,26 @@
     max-height: 220px;
 }
 
+.carousel {
+    margin-top: 50px;
+}
+.carousel-item img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width: 600px) {
+    .carousel-item img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.about-section .image-container img {
+    max-width: 100%;
+}
+
 footer {
     background: #DDDDDD;
 }
