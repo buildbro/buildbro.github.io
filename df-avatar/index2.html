@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFest Avatar Maker</title>
+
+    <script src="https://www.lactame.com/lib/image-js/0.21.2/image.min.js"></script>
+</head>
+
+<body>
+    <img id="color" width="400"
+        src="IWBA.png" />
+    <img id="result" width="400"/>
+
+    <canvas id="myCanvas" width="200" height="100"></canvas>
+
+
+    <script>
+        // const header = new Headers();
+        // header.append("Access-Control-Allow-Origin", "*");
+        async function process() {
+            let image = await IJS.Image.load(document.getElementById('color').src);
+
+            let img2 = await IJS.Image.load('twitter.png');
+            let img3 = await IJS.Image.load('IWBA.png');
+
+            let grey = image.grey();
+
+            //document.getElementById('result').src = grey.toDataURL();
+
+            //const edited = await IJS.Image.load(document.getElementById('result').src);
+
+            // let inserted = image.insert(img3, {x: 10, y:20});
+            // let inserted2 = inserted.alpha().insert(img3, {x: 10, y: 20});
+            grey.save('grey.jpg');
+            document.getElementById('result').src = grey.toDataURL();
+        }
+        process();
+    </script>
+</body>
+
+</html>

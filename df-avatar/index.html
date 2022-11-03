@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="1080" height="1080"></canvas>
+
+    <label>Pick photo</label><input type="file" id="photo">
+
+    <input type="button" value="Get Link" onclick="getLink()">
+
+    <a href="#" id="imageUrl">Download</a>
+
+    <img id="pic">
+
+    <script>
+        // const canvas = document.getElementById('myCanvas');
+        // const ctx = canvas.getContext('2d');
+
+        // let img = new Image("buhari.jpg");
+        // img.addEventListener('load', () => {
+        //     ctx.drawImage(img, 0, 0);
+        // });
+
+
+        let dp_photo = '';
+        var canvas = document.getElementById('myCanvas'),
+            context = canvas.getContext('2d');
+
+        let link = document.getElementById('imageUrl');
+
+        let imgPicker = document.getElementById('photo');
+
+        imgPicker.onchange = function () {
+
+            var fReader = new FileReader();
+            fReader.readAsDataURL(imgPicker.files[0]);
+            fReader.onloadend = function (event) {
+                document.getElementById('pic').src = event.target.result;
+
+                dp_photo = event.target.result;
+
+                make_base();
+            }
+            
+        };
+
+        // make_base();
+
+        function make_base() {
+            icon_image = new Image();
+            icon_image.src = 'IWBA2.png';
+            base_image = new Image();
+            base_image.src = 'pius.jpg';
+            resized_image = new Image();
+            resized_image.src = dp_photo;
+            base_image.onload = function () {
+                context.drawImage(icon_image, 0, 0);
+                //context.drawImage(base_image, 600, 250);
+
+                const aspectRatio = calculateAspectRatioFit(resized_image.width, resized_image.height, 700, 700);
+                context.drawImage(resized_image, 600, 250, aspectRatio.width, aspectRatio.height);
+                context.font = '50px serif';
+                //context.fillText('Hello B', 50, 90);
+                context.drawImage(icon_image, 0, 0);
+
+            }
+
+            //console.log();
+
+        }
+
+        function getLink() {
+            const url = canvas.toDataURL("image/png");
+            link.href = url;
+        }
+
+        function calculateAspectRatioFit(srcWidth, srcHeight, maxWidth, maxHeight) {
+
+            var ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
+
+            return { width: srcWidth * ratio, height: srcHeight * ratio };
+        }
+
+    </script>
+</body>
+
+</html>
