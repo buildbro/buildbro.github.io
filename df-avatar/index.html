@@ -5,19 +5,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DevFest Makurdi 2022 - Make Your Avatar</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .preview {
+            max-width: 700px;
+        }
+    </style>
 </head>
 
 <body>
-    <canvas id="myCanvas" width="1080" height="1080"></canvas>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="http://bit.ly/devfest-mkd-22">Home (RSVP)</a>
+        </div>
+      </nav>
+    <div class="container py-4">
+        <div class="row">
+            <div class="cols-md-12">
+                <p>Welcome to the DevFest Makurdi Avatar page</p>
+                <p class="text-secondary">Make an Avatar to tell your friends you are attending #DevFest</p>
+                <label>Pick photo</label><input type="file" id="photo">
+            </div>
+        </div>
+        <canvas id="myCanvas" width="1080" height="1080" class="preview"></canvas>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="downloadContainer" style="display: none;">
 
-    <label>Pick photo</label><input type="file" id="photo">
-
-    <input type="button" value="Get Link" onclick="getLink()">
-
-    <a href="#" id="imageUrl">Download</a>
-
-    <img id="pic">
+                    <div class="alert alert-success">
+                        <span class="text-success mt-3">Your download link is ready!</span>
+                        <a href="#" id="imageUrl" class="btn btn-primary">Download</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="button" class="btn btn-success" value="Get Link" onclick="getLink()">
+            </div>
+        </div>
+    </div>
 
     <script>
         // const canvas = document.getElementById('myCanvas');
@@ -42,16 +73,17 @@
             var fReader = new FileReader();
             fReader.readAsDataURL(imgPicker.files[0]);
             fReader.onloadend = function (event) {
-                document.getElementById('pic').src = event.target.result;
-
                 dp_photo = event.target.result;
 
                 make_base();
+
+                document.getElementById('downloadContainer').style.display = "none";
+                alert('Great! Photo added, click get link to continue...');
             }
-            
+
         };
 
-        // make_base();
+        make_base();
 
         function make_base() {
             icon_image = new Image();
@@ -77,6 +109,7 @@
         }
 
         function getLink() {
+            document.getElementById('downloadContainer').style.display = "block";
             const url = canvas.toDataURL("image/png");
             link.href = url;
         }
