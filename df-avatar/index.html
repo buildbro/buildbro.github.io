@@ -11,7 +11,8 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
         .preview {
-            max-width: 700px;
+            width: 700px;
+            max-width: 100%;
         }
     </style>
 </head>
@@ -37,7 +38,7 @@
 
                     <div class="alert alert-success">
                         <span class="text-success mt-3">Your download link is ready!</span>
-                        <a href="#" id="imageUrl" class="btn btn-primary">Download</a>
+                        <a href="#" id="imageUrl" class="btn btn-primary" download="avatar.png">Download</a>
                     </div>
                 </div>
                 
@@ -120,6 +121,7 @@
 
             return { width: srcWidth * ratio, height: srcHeight * ratio };
         }
+        
 
     </script>
 </body>
