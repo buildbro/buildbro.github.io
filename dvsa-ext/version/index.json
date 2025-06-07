@@ -1,3 +1,4 @@
 {
-  "minVersion": 9
+  "minVersion": 9,
+  "minVersionIos": 1,
 }
