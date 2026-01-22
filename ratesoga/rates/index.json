@@ -1,17 +1,17 @@
 {
   "usd": {
-    "lemfi": 14,
-    "send": 1,
-    "monieworld": 15
+    "lemfi": 0,
+    "send": 1461.0484,
+    "monieworld": 0
   },
   "gbp": {
-    "lemfi": 14,
-    "send": 1,
-    "monieworld": 15
+    "lemfi": 1996.0,
+    "send": 1955.1107,
+    "monieworld": 2001
   },
   "eur": {
-    "lemfi": 14,
-    "send": 1,
-    "monieworld": 15
+    "lemfi": 0,
+    "send": 1691.9042,
+    "monieworld": 0
   }
 }
