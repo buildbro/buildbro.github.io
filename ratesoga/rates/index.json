@@ -1,17 +1,12 @@
 {
   "usd": [
     {
-      "name": "LemFi XYZ",
+      "name": "LemFi",
       "rate": 1471,
       "notP2P": true
     },
     {
       "name": "Send by Flutterwave",
-      "rate": 1461.0484,
-      "notP2P": true
-    },
-    {
-      "name": "ABC Forex",
       "rate": 1461.0484,
       "notP2P": true
     },
@@ -23,7 +18,7 @@
   ],
   "gbp": [
     {
-      "name": "LemFi XYZ",
+      "name": "LemFi",
       "rate": 1975,
       "notP2P": true
     },
@@ -36,11 +31,16 @@
       "name": "MonieWorld",
       "rate": 1988,
       "notP2P": true
+    },
+    {
+      "name": "Peer-to-peer (P2P)",
+      "rate": 2000,
+      "notP2P": false
     }
   ],
   "eur": [
     {
-      "name": "LemFi XYZ",
+      "name": "LemFi",
       "rate": 1721,
       "notP2P": true
     },
@@ -56,4 +56,3 @@
     }
   ]
 }
-
