@@ -31,11 +31,6 @@
       "name": "MonieWorld",
       "rate": 1988,
       "notP2P": true
-    },
-    {
-      "name": "Peer-to-peer (P2P)",
-      "rate": 2000,
-      "notP2P": false
     }
   ],
   "eur": [
