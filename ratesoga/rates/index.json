@@ -23,7 +23,7 @@
   ],
   "gbp": [
     {
-      "name": "LemFi",
+      "name": "LemFi XYZ",
       "rate": 1975,
       "notP2P": true
     },
@@ -40,7 +40,7 @@
   ],
   "eur": [
     {
-      "name": "LemFi",
+      "name": "LemFi XYZ",
       "rate": 1721,
       "notP2P": true
     },
